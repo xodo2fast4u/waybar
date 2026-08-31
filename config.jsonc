@@ -14,21 +14,13 @@
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "format": "{icon}",
-    "format-icons": {
-      "1": "󰲠",
-      "2": "󰲢",
-      "3": "󰲤",
-      "4": "󰲦",
-      "5": "󰲨",
-      "6": "󰲪",
-      "7": "󰲬",
-      "8": "󰲮",
-      "9": "󰲰",
-      "10": "󰿬",
-      "active": "󰮯",
-      "default": "󰊠"
-    }
+    "format": "{windows}",
+    "workspace-taskbar": {
+      "enable": true
+    },
+    "icon-size": 16,
+    "icon-theme": "Papirus-Dark",
+    "unique-icons": true
   },
 
   "hyprland/window": {
