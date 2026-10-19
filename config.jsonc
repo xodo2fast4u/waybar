@@ -30,7 +30,7 @@
       "enable": true,
       "format": "{icon}",
       "icon-size": 16,
-      "icon-theme": "Papirus-Dark",
+      "icon-theme": "Papirus-Dark"
     },
     "unique-icons": true,
     "sort-by": "number"
@@ -89,7 +89,7 @@
   },
   "custom/theme-toggle": {
     "format": "{}",
-    "exec": "cat /tmp/theme-mode || echo '󰔎'",
+    "exec": "cat /tmp/theme-mode.icon 2>/dev/null || echo '󰔎'",
     "on-click": "~/.local/bin/toggle-theme.sh",
     "interval": 1
   },
