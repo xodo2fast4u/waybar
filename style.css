@@ -1,15 +1,17 @@
 * {
-    font-family: "JetBrainsMono NF", "Roboto", sans-serif;
-    font-size: 13px;
-    font-weight: bold;
     border: none;
     border-radius: 0;
     min-height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 window#waybar {
     background: transparent;
-    color: #cccccc;
+    border-radius: 10px;
+    color: #b0b0b0;
+    font-family: JetBrainsMono Nerd Font;
+    font-size: 13px;
 }
 
 #workspaces,
@@ -21,51 +23,55 @@ window#waybar {
 #network,
 #pulseaudio,
 #battery,
-#tray {
-    background: linear-gradient(to bottom, #1a1a1a, #111111);
+#tray,
+#custom-theme-toggle {
+    background: linear-gradient(to bottom, #1e1e1e, #161616);
     border-radius: 10px;
     padding: 3px 12px;
     margin: 5px 3px;
-    color: #cccccc;
+    color: #b0b0b0;
     transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 #workspaces {
     padding: 3px 5px;
-    background: linear-gradient(to bottom, #141414, #0d0d0d);
+    background: linear-gradient(to bottom, #1e1e1e, #161616);
 }
 
 #workspaces button {
     padding: 2px 9px;
     margin: 0 1px;
-    color: #444444;
+    color: #606060;
     background: transparent;
     border-radius: 7px;
     transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 13px;
 }
 
 #workspaces button:hover {
-    color: #cccccc;
+    color: #b0b0b0;
     background: linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0.08),
-        rgba(255, 255, 255, 0.02)
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.04)
     );
 }
 
 #workspaces button.active {
-    color: #f0f0f0;
-    background: linear-gradient(to bottom, #242424, #1a1a1a);
+    color: #e0e0e0;
+    background: linear-gradient(to bottom, #252525, #1e1e1e);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 #workspaces button.urgent {
-    color: #f0f0f0;
-    background: linear-gradient(to bottom, #2a2a2a, #1e1e1e);
+    color: #e0e0e0;
+    background: linear-gradient(to bottom, #2d1f1f, #261515);
 }
 
 #workspaces .taskbar-window {
     padding: 0 3px;
-    opacity: 0.55;
+    opacity: 0.7;
     transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -75,15 +81,15 @@ window#waybar {
 
 #window {
     color: #888888;
-    background: linear-gradient(to bottom, #161616, #0f0f0f);
+    background: linear-gradient(to bottom, #2a2a2a, #161616);
 }
 
 #clock {
-    color: #f0f0f0;
+    color: #e0e0e0;
 }
 
 #clock:hover {
-    background: linear-gradient(to bottom, #202020, #161616);
+    background: linear-gradient(to bottom, #2e2e2e, #2a2a2a);
 }
 
 #idle_inhibitor {
@@ -91,79 +97,79 @@ window#waybar {
 }
 
 #idle_inhibitor.activated {
-    color: #f0f0f0;
-    background: linear-gradient(to bottom, #202020, #161616);
+    color: #e0e0e0;
+    background: linear-gradient(to bottom, #2e2e2e, #2a2a2a);
 }
 
 #cpu {
-    color: #cccccc;
+    color: #b0b0b0;
 }
 
 #cpu:hover {
-    color: #f0f0f0;
-    background: linear-gradient(to bottom, #202020, #161616);
+    color: #e0e0e0;
+    background: linear-gradient(to bottom, #2e2e2e, #2a2a2a);
 }
 
 #memory {
-    color: #cccccc;
+    color: #b0b0b0;
 }
 
 #memory:hover {
-    color: #f0f0f0;
-    background: linear-gradient(to bottom, #202020, #161616);
+    color: #e0e0e0;
+    background: linear-gradient(to bottom, #2e2e2e, #2a2a2a);
 }
 
 #network {
-    color: #cccccc;
+    color: #b0b0b0;
 }
 
 #network:hover {
-    color: #f0f0f0;
-    background: linear-gradient(to bottom, #202020, #161616);
+    color: #e0e0e0;
+    background: linear-gradient(to bottom, #2e2e2e, #2a2a2a);
 }
 
 #pulseaudio {
-    color: #cccccc;
+    color: #b0b0b0;
 }
 
 #pulseaudio.muted {
-    color: #444444;
+    color: #606060;
 }
 
 #pulseaudio:hover {
-    color: #f0f0f0;
-    background: linear-gradient(to bottom, #202020, #161616);
+    color: #e0e0e0;
+    background: linear-gradient(to bottom, #2e2e2e, #2a2a2a);
 }
 
 #battery {
-    color: #cccccc;
+    color: #b0b0b0;
 }
 
 #battery.warning:not(.charging) {
-    color: #f0f0f0;
-    background: linear-gradient(to bottom, #202020, #161616);
+    color: #e0e0e0;
+    background: linear-gradient(to bottom, #2e2e2e, #2a2a2a);
 }
 
 #battery.critical:not(.charging) {
-    color: #f0f0f0;
-    background: linear-gradient(to bottom, #2a2a2a, #1e1e1e);
-    animation-name: battery-critical-blink;
-    animation-duration: 1.5s;
-    animation-timing-function: steps(8);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#battery.charging {
-    color: #f0f0f0;
-    background: linear-gradient(to bottom, #1e1e1e, #161616);
+    color: #e0e0e0;
+    background: linear-gradient(to bottom, #2d1f1f, #261515);
+    animation: battery-critical-blink 1.5s steps(8) infinite alternate;
 }
 
 @keyframes battery-critical-blink {
     to {
-        color: #080808;
-        background: #f0f0f0;
+        color: #1a1a1a;
+        background: #ff4444;
     }
+}
+
+#battery.charging {
+    color: #e0e0e0;
+    background: linear-gradient(to bottom, #1f2d1f, #2a2a2a);
+}
+
+#custom-theme-toggle:hover {
+    background: linear-gradient(to bottom, #202020, #161616);
 }
 
 #tray {
@@ -171,15 +177,16 @@ window#waybar {
 }
 
 #tray > .passive {
-    opacity: 0.45;
+    opacity: 0.6;
 }
 
 tooltip {
-    background: linear-gradient(to bottom, #1a1a1a, #0d0d0d);
+    background: linear-gradient(to bottom, #1e1e1e, #161616);
     border-radius: 9px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 tooltip label {
-    color: #cccccc;
+    color: #b0b0b0;
     padding: 6px 8px;
 }

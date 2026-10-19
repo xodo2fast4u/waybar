@@ -1,34 +1,45 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 34,
+  "height": 38,
   "margin-top": 6,
   "margin-left": 10,
   "margin-right": 10,
   "spacing": 4,
-
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
-  "modules-center": ["clock"],
-  "modules-right": ["idle_inhibitor", "network", "pulseaudio", "cpu", "memory", "tray"],
-
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "idle_inhibitor",
+    "network",
+    "pulseaudio",
+    "cpu",
+    "memory",
+    "custom/theme-toggle",
+    "tray"
+  ],
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "format": "{windows}",
     "workspace-taskbar": {
-      "enable": true
+      "enable": true,
+      "format": "{icon}",
+      "icon-size": 16,
+      "icon-theme": "Papirus-Dark",
     },
-    "icon-size": 16,
-    "icon-theme": "Papirus-Dark",
-    "unique-icons": true
+    "unique-icons": true,
+    "sort-by": "number"
   },
-
   "hyprland/window": {
     "format": "<b>{}</b>",
     "max-length": 30,
     "separate-outputs": true
   },
-
   "clock": {
     "interval": 1,
     "timezone": "Africa/Johannesburg",
@@ -36,7 +47,6 @@
     "format-alt": "󰃭  {:%A, %B %d, %Y}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
-
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -46,20 +56,17 @@
     "tooltip-format-activated": "Idle inhibitor active",
     "tooltip-format-deactivated": "Idle inhibitor inactive"
   },
-
   "cpu": {
     "interval": 2,
     "format": "󰍛 {usage:2}%",
     "on-click": "kitty -e btop"
   },
-
   "memory": {
     "interval": 2,
     "format": "󰟜 {percentage:2}%",
     "tooltip-format": "RAM Used: {used:0.1f}GiB / {total:0.1f}GiB",
     "on-click": "kitty -e btop"
   },
-
   "network": {
     "interval": 2,
     "format-wifi": "󰤨  {essid}",
@@ -67,17 +74,25 @@
     "format-disconnected": "󰤮  Offline",
     "tooltip-format": "󰅃 {bandwidthUpBits}  󰅀 {bandwidthDownBits}"
   },
-
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "󰝟 Muted",
     "format-icons": {
       "headphone": "󰋋",
-      "default": ["󰕿", "󰖀", "󰕾"]
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
     },
     "on-click": "pavucontrol"
   },
-
+  "custom/theme-toggle": {
+    "format": "{}",
+    "exec": "cat /tmp/theme-mode || echo '󰔎'",
+    "on-click": "~/.local/bin/toggle-theme.sh",
+    "interval": 1
+  },
   "tray": {
     "icon-size": 15,
     "spacing": 8
