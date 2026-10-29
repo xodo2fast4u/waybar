@@ -16,23 +16,23 @@ a clock in the center, and system controls and status indicators on the right.
   the date, and its tooltip contains a calendar.
 - **System status:** Shows idle-inhibitor state, network connection and traffic,
   audio volume, CPU usage, memory usage, and the system tray.
-- **Dark styling:** Rounded modules, subtle gradients, and JetBrainsMono Nerd
-  Font typography.
+- **Dark styling:** Rounded modules, subtle gradients, and DejaVu Sans Mono
+  typography.
 
 ## Requirements
 
 - [Waybar](https://github.com/Alexays/Waybar) with Hyprland module support
 - [Hyprland](https://hyprland.org/)
-- [JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads) for the
-  configured font and icon glyphs
+- DejaVu Sans Mono, available on this system, for Waybar text
 - [Papirus-Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
   icon theme for workspace application icons
-- `kitty` and `btop` for the CPU and memory click actions
+- `kitty` and `htop` for the CPU and memory click actions
 - `pavucontrol` for the audio click action
 
 The configuration refers to these programs by name. Install them using your
 distribution's package manager, or adjust the commands and icon theme in
-`config.jsonc` to match your system.
+`config.jsonc` to match your system. No Nerd Font is required: status indicators
+use text labels, while workspace application icons come from Papirus-Dark.
 
 ## Install and run
 
@@ -55,7 +55,7 @@ to your Hyprland startup configuration.
 - Edit `style.css` to change colors, spacing, typography, and module appearance.
 - The workspace configuration keeps workspaces 1–5 visible on all outputs.
   Change `persistent-workspaces` if you prefer a different set.
-- CPU and memory clicks run `kitty -e btop`; the audio click runs `pavucontrol`.
+- CPU and memory clicks run `kitty -e htop`; the audio click runs `pavucontrol`.
   Change the relevant `on-click` values if you use different applications.
 - The stylesheet includes battery selectors, but a battery module is not
   currently enabled in `config.jsonc`.
@@ -65,10 +65,10 @@ changes do not appear.
 
 ## Files
 
-| File | Purpose |
-| --- | --- |
+| File                             | Purpose                                   |
+| -------------------------------- | ----------------------------------------- |
 | [`config.jsonc`](./config.jsonc) | Bar layout, modules, formats, and actions |
-| [`style.css`](./style.css) | Colors, typography, and visual styling |
+| [`style.css`](./style.css)       | Colors, typography, and visual styling    |
 
 ## License
 
