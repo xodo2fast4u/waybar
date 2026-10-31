@@ -10,7 +10,7 @@ window#waybar {
   background: transparent;
   border-radius: 10px;
   color: #b0b0b0;
-  font-family: 'DejaVu Sans Mono';
+  font-family: "DejaVu Sans Mono", "Noto Sans Symbols 2", "Noto Sans Symbols";
   font-size: 13px;
 }
 
